@@ -6,7 +6,7 @@ I modified it to resemble [Agency bootstrap theme](https://github.com/BlackrockD
 This README is based on [Jerome Lachaud](https://github.com/jeromelachaud/freelancer-theme)'s version.
 
 ## How to use
- - Replace `static/images/header-bg.png` with the image of your choice
+ - Replace `static/images/header-bg.jpg` with the image of your choice (could be a png if oyu wish ;))
  - Place portfolio images in `content/images/portoflio/`
  - Create posts to display your projects. Use the follow as an example:
 
