@@ -174,7 +174,8 @@
 			                    <div class="modal-body">
 			                        <h2>{{article.title}}</h2>
 			                        <hr class="star-primary">
-			                        <img src="{{ SITEURL }}/images/portfolio/{{article.image}}" class="img-responsive img-centered" alt="">
+                                                {% include 'article.html'%}
+                                                <!-- a href="{{article.slug}}"><img src="{{ SITEURL }}/images/portfolio/{{article.image}}" class="img-responsive img-centered" alt=""></a -->
 			                        <p>{{article.content}}</p>
 			                        <ul class="list-inline item-details">
 			                            <li>Client:

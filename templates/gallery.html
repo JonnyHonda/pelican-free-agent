@@ -1,0 +1,81 @@
+{% extends "gallery-base.html" %}
+
+{% block title %}
+	{{SITENAME}}
+{% endblock %}
+
+{% block nav %}
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a id="focusme" class="navbar-brand" href="#page-top">{{SITENAME}}</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">arit
+            {% for link, title  in NAVLINKS %}
+            	{%if title == '' %}
+            	<li class="hidden">
+                    <a href="{{link}}"></a>
+                </li>
+                {% else %}
+                <li class="page-scroll">
+                    <a href="{{link}}">{{title}}</a>
+                </li>
+                {% endif %}
+            {% endfor %}                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+	
+{% endblock %}
+
+
+{% block gallery %}
+
+<!-- Portfolio Grid Section -->
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>{{Gallery}}</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+
+            <div class="row">
+{% for album, images in page.gallery.iteritems() %}
+<h2><a name="{{ album }}">{{ album }}</a></h2>
+
+    {% for image in images %}
+              <div class="mySlides">
+            <img src="{{ SITEURL }}/images/portfolio/thumbnails/250px/{{ album }}/{{ image }}" class="img-responsive img-centered">
+              </div>
+    {% endfor %}
+{% endfor %}
+            
+        </div>
+    </div>
+</section>
+
+	
+{% endblock %}
+
+
+
+
+
+
+
